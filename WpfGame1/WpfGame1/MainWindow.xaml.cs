@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfGame1
 {
@@ -76,7 +66,6 @@ namespace WpfGame1
             {
                 Counter = 9;
             }
-
         }
 
         private bool CheckIfWon()
@@ -85,12 +74,13 @@ namespace WpfGame1
                 Button_0_0.Content == Button_0_1.Content && Button_0_1.Content == Button_0_2.Content)
             {
                 Button_0_0.Background = Brushes.Green;
-                Button_0_0.Background = Brushes.Green;
-                Button_0_0.Background = Brushes.Green;
+                Button_0_1.Background = Brushes.Green;
+                Button_0_2.Background = Brushes.Green;
                 return true;
             }
 
-            if (Button_1_0.Content == Button_1_1.Content && Button_1_1.Content == Button_2_1.Content)
+            if (Button_1_0.Content.ToString() != string.Empty && 
+                Button_1_0.Content == Button_1_1.Content && Button_1_1.Content == Button_1_2.Content)
             {
                     Button_1_0.Background = Brushes.Green;
                     Button_1_1.Background = Brushes.Green;
@@ -98,12 +88,56 @@ namespace WpfGame1
                     return true;
             }
 
-            if (Button_2_0.Content == Button_2_1.Content && Button_2_1.Content == Button_2_2.Content)
+            if (Button_2_0.Content.ToString() != string.Empty && 
+                Button_2_0.Content == Button_2_1.Content && Button_2_1.Content == Button_2_2.Content)
             {
                     Button_2_0.Background = Brushes.Green;
                     Button_2_1.Background = Brushes.Green;
                     Button_2_2.Background = Brushes.Green;
                     return true;
+            }
+            if (Button_0_0.Content.ToString() != String.Empty &&
+                Button_0_0.Content == Button_1_0.Content && Button_1_0.Content == Button_2_0.Content)
+            {
+                Button_0_0.Background = Brushes.Green;
+                Button_1_0.Background = Brushes.Green;
+                Button_2_0.Background = Brushes.Green;
+                return true;
+            }
+
+            if (Button_0_1.Content.ToString() != string.Empty &&
+                Button_0_1.Content == Button_1_1.Content && Button_1_1.Content == Button_2_1.Content)
+            {
+                Button_0_1.Background = Brushes.Green;
+                Button_1_1.Background = Brushes.Green;
+                Button_2_1.Background = Brushes.Green;
+                return true;
+            }
+
+            if (Button_0_2.Content.ToString() != string.Empty &&
+                Button_0_2.Content == Button_1_2.Content && Button_1_2.Content == Button_2_2.Content)
+            {
+                Button_0_2.Background = Brushes.Green;
+                Button_1_2.Background = Brushes.Green;
+                Button_2_2.Background = Brushes.Green;
+                return true;
+            }
+
+            if (Button_0_0.Content.ToString() != string.Empty &&
+                Button_0_0.Content == Button_1_1.Content && Button_1_1.Content == Button_2_2.Content)
+            {
+                Button_0_0.Background = Brushes.Green;
+                Button_1_1.Background = Brushes.Green;
+                Button_2_2.Background = Brushes.Green;
+                return true;
+            }
+            if (Button_0_2.Content.ToString() != string.Empty &&
+                Button_0_2.Content == Button_1_1.Content && Button_1_1.Content == Button_2_0.Content)
+            {
+                Button_0_2.Background = Brushes.Green;
+                Button_1_1.Background = Brushes.Green;
+                Button_2_0.Background = Brushes.Green;
+                return true;
             }
             return false;
         }
